@@ -1,0 +1,7 @@
+com\mycompany\user\IDao.class
+com\mycompany\user\UserDao.class
+com\mycompany\user\User.class
+com\mycompany\user\Dao.class
+com\mycompany\user\Entity.class
+com\mycompany\user\DbConnection.class
+com\mycompany\user\Exec.class

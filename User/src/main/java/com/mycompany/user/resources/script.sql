@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS alphasystem;
+
+USE alphasystem;
+
+CREATE TABLE IF NOT EXISTS user (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(64) NOT NULL,
+    lastAccess DATE,
+    active BOOLEAN DEFAULT TRUE
+);
