@@ -2,8 +2,7 @@ package com.mycompany.user;
 
 import java.time.LocalDateTime;
 
-public class User {
-
+public class User extends Entity {
     private String name;
     private String email;
     private String password;
@@ -18,6 +17,11 @@ public class User {
         this.active = active;
     }
 
+    User() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    // Getters e Setters
     public String getName() {
         return name;
     }

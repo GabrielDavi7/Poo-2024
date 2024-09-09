@@ -10,14 +10,13 @@ public class DbConnection {
 
     private static final String URL = "jdbc:mysql://localhost:3306/alphasystem";
     private static final String USER = "root";
-    private static final String PASSWORD = "yourpassword";
+    private static final String PASSWORD = "suasenha"; 
 
     private DbConnection() {
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Falha ao conectar ao banco de dados: " + e.getMessage());
+            System.err.println("Falha ao conectar ao banco de dados: " + e.getMessage());
         }
     }
 
@@ -39,8 +38,7 @@ public class DbConnection {
                 System.out.println("Conexão com o banco de dados fechada com sucesso.");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Falha ao fechar a conexão com o banco de dados: " + e.getMessage());
+            System.err.println("Falha ao fechar a conexão com o banco de dados: " + e.getMessage());
         }
     }
 }

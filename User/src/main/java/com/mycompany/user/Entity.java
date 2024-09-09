@@ -1,6 +1,5 @@
 package com.mycompany.user;
 
-
 public abstract class Entity {
     protected Long id;
 

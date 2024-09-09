@@ -11,7 +11,7 @@ public abstract class Dao<E> implements IDao<E> {
         try {
             this.connection = DbConnection.getInstance().getConnection();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Erro ao obter conexão: " + e.getMessage());
         }
     }
 
@@ -40,7 +40,7 @@ public abstract class Dao<E> implements IDao<E> {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Erro ao salvar entidade: " + e.getMessage());
         }
         return null;
     }
@@ -51,7 +51,7 @@ public abstract class Dao<E> implements IDao<E> {
             composeSaveOrUpdateStatement(pstmt, entity);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Erro ao atualizar entidade: " + e.getMessage());
         }
     }
 
@@ -65,7 +65,7 @@ public abstract class Dao<E> implements IDao<E> {
                 return extractObject(rs);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Erro ao buscar entidade por ID: " + e.getMessage());
         }
         return null;
     }
@@ -80,7 +80,7 @@ public abstract class Dao<E> implements IDao<E> {
                 entities.add(extractObject(rs));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Erro ao listar entidades: " + e.getMessage());
         }
         return entities;
     }
@@ -91,7 +91,7 @@ public abstract class Dao<E> implements IDao<E> {
             pstmt.setLong(1, id);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Erro ao deletar entidade: " + e.getMessage());
         }
     }
 

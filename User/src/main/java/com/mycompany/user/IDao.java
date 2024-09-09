@@ -9,4 +9,3 @@ public interface IDao<E> {
     List<E> findAll();
     void delete(Long id);
 }
-
